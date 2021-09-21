@@ -6,8 +6,9 @@
         <ul>
           <li><a href="#" class="link">Products</a></li>
           <li><a href="#" class="link">Cart</a></li>
+          <li><a href="#" class="link">{{cart.quantity}}</a></li>
         </ul>
-        <a class="login">  Login</a>
+        <button class="login">Login</button>
       </div>
     </div>
   </div>
@@ -16,7 +17,7 @@
 <script>
 export default {
   name: "Header",
-
+  inject: ['isLoggedIn', 'cart',]
 };
 </script>
 
@@ -38,9 +39,11 @@ h3 {
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 li {
-  display: inline-block;
   margin: 0 10px;
 }
 
@@ -65,11 +68,13 @@ a:hover {
   text-decoration-color: #42b983;
 }
 
-.login {
+button {
   color: #42b983;
   font-size: 1.2rem;
+  font-weight: 700;
+  background-color: transparent;
   padding: 8px 24px;
-
+  cursor: pointer;
   border: 2px solid #42b983;
   border-radius: 18px;
 }
