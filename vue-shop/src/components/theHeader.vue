@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "theHeader",
   inject: ['isLoggedIn', 'cart',]
 };
 </script>
