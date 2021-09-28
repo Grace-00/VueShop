@@ -38,11 +38,13 @@ h3 {
 
 ul {
   list-style-type: none;
+  cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 li {
   margin: 0 10px;
 }
@@ -55,17 +57,16 @@ a {
   text-decoration-color: transparent;
 
 }
-
-
-
-
-
 a:hover {
   text-underline-offset: 0.25em;
   text-decoration-thickness: 3px;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
   text-decoration-color: #42b983;
+  }
+
+li:nth-child(3) {
+  text-decoration: none;
+  pointer-events: none;
 }
 
 button {
