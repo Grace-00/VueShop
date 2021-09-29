@@ -1,17 +1,17 @@
 <template>
 <div class="app">
   <the-header></the-header>
-  <products-list v-for="product in products" :prdt='product' :key="product.id"></products-list>
+  <router-view></router-view>
 </div>
 </template>
 
 <script>
 import theHeader from "./components/theHeader.vue";
-import productsList from './components/productsList.vue';
+//import productsList from './components/productsList.vue';
 export default {
   components: {
     theHeader,
-    productsList,
+    //productsList,
   },
   data() {
     return {

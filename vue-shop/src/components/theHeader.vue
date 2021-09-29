@@ -4,7 +4,7 @@
       <div class="header__content">
         <h3>VueShop</h3>
         <ul>
-          <li><a href="#" class="link">Products</a></li>
+          <li><router-link to="/products">Products</router-link></li>
           <li><a href="#" class="link">Cart</a></li>
           <li><a href="#" class="link">{{cart.quantity}}</a></li>
         </ul>
@@ -55,8 +55,8 @@ a {
   font-weight: 700;
   text-decoration: underline;
   text-decoration-color: transparent;
-
 }
+
 a:hover {
   text-underline-offset: 0.25em;
   text-decoration-thickness: 3px;
