@@ -1,8 +1,8 @@
 <template>
-<div class="app">
-  <the-header></the-header>
-  <router-view></router-view>
-</div>
+  <div class="app">
+    <the-header></the-header>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -47,13 +47,13 @@ export default {
       cart: { items: [], total: 0, quantity: 0 },
     };
   },
-    provide() {
+  provide() {
     return {
       isLoggedIn: this.isLoggedIn,
       products: this.products,
       cart: this.cart,
-      }
-    }
+    };
+  },
 };
 </script>
 

@@ -2,11 +2,13 @@
   <div class="header__container">
     <div class="header__container-inner">
       <div class="header__content">
-        <h3>VueShop</h3>
+        <router-link to="/products"><h3>VueShop</h3></router-link>
         <ul>
           <li><router-link to="/products">Products</router-link></li>
-          <li><a href="#" class="link">Cart</a></li>
-          <li><a href="#" class="link">{{cart.quantity}}</a></li>
+          <li><router-link to="/cart">Cart</router-link></li>
+          <li>
+            <a href="#" class="link">{{ cart.quantity }}</a>
+          </li>
         </ul>
         <button class="login">Login</button>
       </div>
@@ -17,13 +19,12 @@
 <script>
 export default {
   name: "theHeader",
-  inject: ['isLoggedIn', 'cart',]
+  inject: ["isLoggedIn", "cart"],
 };
 </script>
 
 
 <style scoped>
-
 .header__content {
   display: flex;
   align-items: center;
@@ -33,7 +34,7 @@ export default {
 
 h3 {
   font-size: 2rem;
-  font-weight: 700 ;
+  font-weight: 700;
 }
 
 ul {
@@ -62,7 +63,7 @@ a:hover {
   text-decoration-thickness: 3px;
   transition: all 0.3s ease-in-out;
   text-decoration-color: #42b983;
-  }
+}
 
 li:nth-child(3) {
   text-decoration: none;

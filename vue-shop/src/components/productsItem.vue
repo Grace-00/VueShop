@@ -57,7 +57,6 @@ img {
 .product-button {
   margin-top: 10px;
   background-color: transparent;
-
 }
 
 button {
@@ -65,7 +64,7 @@ button {
   background-color: #42b983;
   border-radius: 20px;
   width: 120px;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-size: 1rem;
   font-weight: 700;
   color: white;
