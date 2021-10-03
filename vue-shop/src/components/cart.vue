@@ -1,13 +1,27 @@
 <template>
   <div class="cart">
     <h2>Your cart</h2>
-    <h3>Total Amount: {{ cart.total }}</h3>
+    <h3>Total Amount: {{ cart.total.toFixed(2) }}</h3>
+    <cart-item
+      v-for="item in cart.items"
+      :key="item.productId"
+      :prod-id="item.productId"
+      :title="item.title"
+      :description="item.description"
+      :image="item.image"
+      :price="item.price"
+      :quantity="item.quantity"
+    ></cart-item>
   </div>
 </template>
 
 <script>
+import cartItem from "./cartItem.vue";
 export default {
   inject: ["cart"],
+  components: {
+    cartItem,
+  },
 };
 </script>
 
