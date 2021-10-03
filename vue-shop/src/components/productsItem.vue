@@ -14,7 +14,7 @@
         <p>{{ prdt.description }}</p>
       </div>
       <div class="product-button">
-        <button>Add to cart</button>
+        <button @click="addToCart">Add to cart</button>
       </div>
     </div>
   </div>
@@ -23,9 +23,21 @@
 <script>
 export default {
   name: "productsItem",
+  inject: ['addProductToCart'],
   props: {
     prdt: {
       type: Object,
+    },
+  },
+  methods: {
+    addToCart() {
+      this.addProductToCart({
+        id: this.prdt.id,
+        image: this.prdt.image,
+        title: this.prdt.title,
+        description: this.prdt.description,
+        price: this.prdt.price,
+      });
     },
   },
 };
