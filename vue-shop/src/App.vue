@@ -7,11 +7,10 @@
 
 <script>
 import theHeader from "./components/theHeader.vue";
-//import productsList from './components/productsList.vue';
+
 export default {
   components: {
     theHeader,
-    //productsList,
   },
   data() {
     return {
@@ -52,7 +51,41 @@ export default {
       isLoggedIn: this.isLoggedIn,
       products: this.products,
       cart: this.cart,
+      addProductToCart: this.addProductToCart,
+      removeProductFromCart: this.removeProductFromCart,
     };
+  },
+  methods: {
+    addProductToCart(productData) {
+      const productInCartIndex = this.cart.items.findIndex(
+        (cartItem) => cartItem.productId === productData.id
+      );
+
+      if (productInCartIndex >= 0) {
+        this.cart.items[productInCartIndex].quantity++;
+      } else {
+        const newItem = {
+          productId: productData.id,
+          title: productData.title,
+          image: productData.image,
+          description: productData.description,
+          price: productData.price,
+          quantity: 1,
+        };
+        this.cart.items.push(newItem);
+      }
+      this.cart.quantity++;
+      this.cart.total += productData.price;
+    },
+    removeProductFromCart(prodId) {
+      const productInCartIndex = this.cart.items.findIndex(
+        (cartItem) => cartItem.productId === prodId
+      );
+      const prodData = this.cart.items[productInCartIndex];
+      this.cart.items.splice(productInCartIndex, 1);
+      this.cart.quantity -= prodData.quantity;
+      this.cart.total -= prodData.price * prodData.quantity;
+    },
   },
 };
 </script>
